@@ -41,13 +41,9 @@ nav a:hover {
 }
 
  .hero {
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
   width: 100vw;
-  height: 60vh; /* panoráma arány: 60% a képernyő magasságának */
-  overflow: visible;
+  height: 60vh;
+  overflow: hidden;
 }
 
 .hero::after {
