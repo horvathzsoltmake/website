@@ -76,7 +76,7 @@ nav a:hover {
 section {
   max-width: 100%;
   margin: 0rem auto;
-  padding: 0rem;
+  padding: 2.50rem;
   background: none; /* Remove white background */
   border-radius: 0px;
   box-shadow: none;
@@ -84,7 +84,7 @@ section {
 
 section ul {
   list-style: none;
-  padding-left: 0;
+  padding-left: 2.50rem;
 }
 
 h1, h2 {
