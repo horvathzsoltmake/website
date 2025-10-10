@@ -1,6 +1,6 @@
 html, body {
-  height: 100vh;
-  overflow: hidden;
+  /* height: 100vh;
+  overflow: hidden; */
 }
 
 body {
@@ -39,7 +39,7 @@ nav a:hover {
 
 .hero {
   width: 100vw;
-  height: 600px;
+  height: 100vh; /* Make hero fill viewport height only on index */
   min-height: 0;
   background: none;
   display: flex;
