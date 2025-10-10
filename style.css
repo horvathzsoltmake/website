@@ -41,38 +41,9 @@ nav a:hover {
 }
 
  .hero {
-  width: 100%;
-  height: 60vh;
-  overflow: hidden;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-}
+  background-image: url("images/hero1.JPG");
+ }
 
-.hero::after {
-  content: none;
-}
-
-.hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: fill; /* a kép kitölti, de megtartja az arányát */
-  object-position: center center;
-  display: block;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  padding: 0;
-  border: none;
-}
-
-.hero-content {
-  position: relative;
-  color: #fff;
-  text-align: center;
-  z-index: 1;
-}
 
 section {
   max-width: 100%;
