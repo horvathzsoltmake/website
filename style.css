@@ -61,6 +61,15 @@ nav a:hover {
   margin-bottom: 0;
 }
 
+/* dark overlay so white text stays readable */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: 0;
+}
+
 /* hero variants for different pages */
 .hero--index {
   background-image: url('images/hero1.JPG');
@@ -68,7 +77,8 @@ nav a:hover {
 }
 
 .hero--works {
-  background-image: url('images/hero4.JPG');
+  /* use the same filename as in the gallery (hero4.jpg) */
+  background-image: url('images/hero4.jpg');
   background-repeat: no-repeat;
 }
 
@@ -91,6 +101,8 @@ nav a:hover {
   background: rgba(255,255,255,0.06);
   border-radius: 6px;
   font-weight: 600;
+  font-size: 5rem;           /* >= 5× bigger */
+  line-height: 1;            /* tighter, adjust if needed */
   transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
 }
 .hero-links a:hover,
@@ -109,7 +121,7 @@ section, [id] {
 /* small responsive tweak for hero links */
 @media (max-width: 520px) {
   .hero { min-height: 48vh; }
-  .hero-links a { width: 88%; font-size: 1rem; }
+  .hero-links a { width: 88%; font-size: 1.6rem; } /* scale down on small screens */
 }
 
 section {
