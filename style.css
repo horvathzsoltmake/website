@@ -161,8 +161,7 @@ nav a:hover {
 }
 
 /* ensure the very large works links do not affect hero-text */
-.hero .hero-links a { /* no change, but keep separation */ }
-
+/* intentionally removed empty ruleset; related styles are defined in .hero-links a and responsive media queries above */
 /* responsive adjustments */
 @media (max-width: 900px) {
   .hero-text h1 { font-size: 2.4rem; }
