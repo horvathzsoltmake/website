@@ -4,7 +4,7 @@ html, body {
   overflow-x: hidden; /* vízszintes görgetés tiltva */
   overflow-y: auto;   /* függőleges engedélyezve */
   height: auto;
-  padding-top: 120px; /* hely a fix headernek */
+  padding-top: 80px; /* hely a fix headernek */
 }
 
 body {
@@ -20,7 +20,7 @@ header {
   left: 0;
   width: 100%;
   background: white;
-  padding: 1.5rem 1rem;
+  padding: 1rem 1rem;
   text-align: center;
   z-index: 1000;
 }
@@ -93,13 +93,13 @@ nav a:hover {
 }
 .hero-links a {
   display: block;
-  width: 260px;
+  width: 500px;
   margin: 8px auto;
   padding: 10px 16px;
   color: #fff;
   text-decoration: none;
   background: rgba(255,255,255,0.06);
-  border-radius: 6px;
+  border-radius: 0px;
   font-weight: 600;
   font-size: 5rem;           /* >= 5× bigger */
   line-height: 1;            /* tighter, adjust if needed */
