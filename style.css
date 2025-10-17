@@ -123,6 +123,58 @@ nav a:hover {
   outline: none;
 }
 
+/* hero text overlay (used on about/contact) */
+.hero-text {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+  padding: 0 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.hero-text h1 {
+  margin: 0;
+  font-size: 3.5rem;
+  line-height: 1;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+.hero-text p {
+  margin: 0.6rem 0 0;
+  font-size: 1.25rem;
+  color: rgba(255,255,255,0.95);
+  max-width: 44rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero-cta {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1rem;
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+/* ensure the very large works links do not affect hero-text */
+.hero .hero-links a { /* no change, but keep separation */ }
+
+/* responsive adjustments */
+@media (max-width: 900px) {
+  .hero-text h1 { font-size: 2.4rem; }
+  .hero-text p { font-size: 1rem; }
+  .hero-links a { font-size: 2.4rem; width: 80%; } /* keep works readable */
+}
+@media (max-width: 520px) {
+  .hero-text h1 { font-size: 1.6rem; }
+  .hero-text p { font-size: 0.95rem; }
+  .hero-links a { width: 88%; font-size: 1.6rem; } /* already exists, kept for clarity */
+}
+
 /* ensure anchor targets are visible beneath fixed header */
 section, [id] {
   scroll-margin-top: 120px;
