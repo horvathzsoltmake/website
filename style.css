@@ -111,8 +111,8 @@ nav a:hover {
   background: rgba(255,255,255,0.06);
   border-radius: 0px;
   font-weight: 600;
-  font-size: 5rem;           /* >= 5× bigger */
-  line-height: 1;            /* tighter, adjust if needed */
+  font-size: 5rem;
+  line-height: 1;
   transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
 }
 .hero-links a:hover,
@@ -133,56 +133,26 @@ nav a:hover {
   max-width: 1000px;
   margin: 0 auto;
 }
-.hero-text h1 {
-  margin: 0;
-  font-size: 3.5rem;
-  line-height: 1;
-  font-weight: 700;
-  color: #fff;
-  letter-spacing: -0.02em;
-}
-.hero-text p {
-  margin: 0.6rem 0 0;
-  font-size: 1.25rem;
-  color: rgba(255,255,255,0.95);
-  max-width: 44rem;
-  margin-left: auto;
-  margin-right: auto;
-}
-.hero-cta {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.6rem 1rem;
-  background: rgba(255,255,255,0.12);
-  color: #fff;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: 600;
-}
+.hero-text h1 { margin: 0; font-size: 3.5rem; line-height: 1; font-weight: 700; color: #fff; letter-spacing: -0.02em; }
+.hero-text p { margin: 0.6rem 0 0; font-size: 1.25rem; color: rgba(255,255,255,0.95); max-width: 44rem; margin-left: auto; margin-right: auto; }
+.hero-cta { display: inline-block; margin-top: 1rem; padding: 0.6rem 1rem; background: rgba(255,255,255,0.12); color: #fff; text-decoration: none; border-radius: 6px; font-weight: 600; }
 
-/* ensure the very large works links do not affect hero-text */
-/* intentionally removed empty ruleset; related styles are defined in .hero-links a and responsive media queries above */
-/* responsive adjustments */
+/* responsive adjustments (single consolidated block) */
 @media (max-width: 900px) {
   .hero-text h1 { font-size: 2.4rem; }
   .hero-text p { font-size: 1rem; }
-  .hero-links a { font-size: 2.4rem; width: 80%; } /* keep works readable */
+  .hero-links a { font-size: 2.4rem; width: 80%; }
 }
 @media (max-width: 520px) {
+  .hero { min-height: 48vh; }
   .hero-text h1 { font-size: 1.6rem; }
   .hero-text p { font-size: 0.95rem; }
-  .hero-links a { width: 88%; font-size: 1.6rem; } /* already exists, kept for clarity */
+  .hero-links a { width: 88%; font-size: 1.6rem; }
 }
 
 /* ensure anchor targets are visible beneath fixed header */
 section, [id] {
   scroll-margin-top: 120px;
-}
-
-/* small responsive tweak for hero links */
-@media (max-width: 520px) {
-  .hero { min-height: 48vh; }
-  .hero-links a { width: 88%; font-size: 1.6rem; } /* scale down on small screens */
 }
 
 section {
@@ -237,7 +207,7 @@ img {
 .cv-box {
   max-width: 900px;
   margin-left: 0vw;
-  margin-right: 0vw;;
+  margin-right: 0vw;
   padding: 2rem;
   background: #f5f5f5;
   border-radius: 0px;
