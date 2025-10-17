@@ -82,6 +82,16 @@ nav a:hover {
   background-repeat: no-repeat;
 }
 
+.hero--about {
+  background-image: url('images/hero3.JPG');
+  background-repeat: no-repeat;
+}
+
+.hero--contact {
+  background-image: url('images/hero5.JPG');
+  background-repeat: no-repeat;
+}
+
 /* hero links (moved from inline styles in works.html) */
 .hero-content {
   position: relative;
