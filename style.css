@@ -198,3 +198,10 @@ img {
   border-radius: 0px;
   box-shadow: 0 0px 0px rgba(0,0,0,0.07);
 }
+
+/* disable vertical scrolling when the html element has .no-scroll (applies only to pages that set the class) */
+html.no-scroll,
+body.no-scroll {
+  overflow-y: hidden;
+  height: 100vh;
+}
