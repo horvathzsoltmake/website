@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" class="no-scroll">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Works 2020–2024 – HZS Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="index.html">Zsolt Horváth</a></h1>
+    <nav>
+      <a href="about.html">About</a>
+      <a href="works.html" class="active">Works</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="gallery">
+      <h2>2020–2024</h2>
+      <div class="gallery-grid">
+        <img src="images/malmivalu.JPG" alt="">
+        <img src="images/hero5.JPG" alt="">
+        <img src="images/zizi.JPG" alt="">
+        <img src="images/sumi.JPG" alt="">
+        <img src="images/hero4.jpg" alt="">
+        <img src="images/ww.jpg" alt="">
+        <img src="images/cyrk.JPG" alt="">
+        <img src="images/díj.JPG" alt="">
+        <img src="images/hero3.JPG" alt="">
+        <img src="images/monolit.jpg" alt="">
+        <img src="images/gomba.JPG" alt="">
+        <img src="images/hero6.JPG" alt="">
+        <img src="images/mest1.jpg" alt="">
+        <img src="images/tojás.jpg" alt="">
+        <img src="images/tál.JPG" alt="">
+        <img src="images/Mustra1.jpg" alt="">
+        <img src="images/mustra2.JPG" alt="">
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Zsolt Horvath  <a href="https://www.instagram.com/zsolt.horvath.metalworks" target="_blank" rel="noopener noreferrer">@zsolt.horvath.metalworks</a>
+  </footer>
+</body>
+</html>
