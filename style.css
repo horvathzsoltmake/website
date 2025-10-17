@@ -96,10 +96,14 @@ nav a:hover {
 .hero-content {
   position: relative;
   z-index: 1;
+  display: flex;               /* center vertically/horizontally */
+  align-items: center;
+  justify-content: center;
   text-align: center;
   width: 100%;
   max-width: 760px;
   padding: 0 1rem;
+  height: 100%;                /* fill hero height so centering works */
 }
 .hero-links a {
   display: block;
