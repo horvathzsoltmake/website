@@ -1,19 +1,17 @@
+/* ====== GLOBAL RESET ====== */
 html, body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* vízszintes görgetés tiltva */
-  overflow-y: auto;   /* függőleges engedélyezve */
-  height: auto;
-  padding-top: 80px; /* hely a fix headernek */
-}
-
-body {
+  height: 100%;
+  overflow-x: hidden;
   font-family: 'Segoe UI', Arial, sans-serif;
-  background: none;
   color: #222;
+  background: none;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* ==== FIXÁLT HEADER ==== */
+/* ====== FIXÁLT HEADER ====== */
 header {
   position: fixed;
   top: 0;
@@ -46,22 +44,22 @@ nav a:hover {
   color: #0078d7;
 }
 
+/* ====== HERO SECTIONS (static, centered composition) ====== */
 .hero {
   width: 100vw;
-  min-height: 60vh;
-  /* base hero background removed from here; use modifiers below */
+  height: 100vh;                /* full-screen fixed layout */
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  /* margin-left: calc(50% - 50vw); */
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0;
+  overflow: hidden;
 }
 
-/* dark overlay so white text stays readable */
+/* dark overlay */
 .hero::before {
   content: "";
   position: absolute;
@@ -70,55 +68,73 @@ nav a:hover {
   z-index: 0;
 }
 
-/* hero variants for different pages */
+/* hero variants */
 .hero--index {
   background-image: url('images/hero1.JPG');
-  background-repeat: no-repeat;
 }
 
 .hero--works {
-  /* use the same filename as in the gallery (hero4.jpg) */
   background-image: url('images/hero4.jpg');
-  background-repeat: no-repeat;
 }
 
 .hero--about {
   background-image: url('images/hero3.JPG');
-  background-repeat: no-repeat;
 }
 
 .hero--contact {
   background-image: url('images/hero5.JPG');
-  background-repeat: no-repeat;
 }
 
-/* hero links (moved from inline styles in works.html) */
+/* hero inner structure */
 .hero-content {
   position: relative;
   z-index: 1;
-  display: flex;               /* center vertically/horizontally */
+  display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   width: 100%;
-  max-width: 760px;
+  height: 100%;
   padding: 0 1rem;
-  height: 100%;                /* fill hero height so centering works */
 }
+
+.hero-text {
+  color: #fff;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-text h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+
+.hero-text p {
+  margin-top: 0.6rem;
+  font-size: 1.25rem;
+  color: rgba(255,255,255,0.95);
+}
+
 .hero-links a {
   display: block;
-  width: 500px;
+  max-width: 500px;
+  width: 100%;
   margin: 8px auto;
   padding: 10px 16px;
   color: #fff;
   text-decoration: none;
-  /* background: rgba(255,255,255,0.06); */
-  border-radius: 0px;
+  border-radius: 0;
   font-weight: 600;
   font-size: 5rem;
   line-height: 1;
-  /* transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease; */
+  text-align: center;
+  transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
 }
+
 .hero-links a:hover,
 .hero-links a:focus {
   transform: translateY(-6px);
@@ -127,65 +143,51 @@ nav a:hover {
   outline: none;
 }
 
-/* hero text overlay (used on about/contact) */
-.hero-text {
-  position: relative;
-  z-index: 1;
-  text-align: center;
+.hero-cta {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1rem;
+  background: rgba(255,255,255,0.12);
   color: #fff;
-  padding: 0 1rem;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-.hero-text h1 { margin: 0; font-size: 2rem; line-height: 1; font-weight: 700; color: #fff; letter-spacing: -0.02em; }
-.hero-text p { margin: 0.6rem 0 0; font-size: 1.25rem; color: rgba(255,255,255,0.95); max-width: 44rem; margin-left: auto; margin-right: auto; }
-.hero-cta { display: inline-block; margin-top: 1rem; padding: 0.6rem 1rem; background: rgba(255,255,255,0.12); color: #fff; text-decoration: none; border-radius: 0px; font-weight: 600; }
-
-/* responsive adjustments (single consolidated block) */
-@media (max-width: 900px) {
-  .hero-text h1 { font-size: 2.4rem; }
-  .hero-text p { font-size: 1rem; }
-  .hero-links a { font-size: 2.4rem; width: 80%; }
-}
-@media (max-width: 520px) {
-  .hero { min-height: 48vh; }
-  .hero-text h1 { font-size: 1.6rem; }
-  .hero-text p { font-size: 0.95rem; }
-  .hero-links a { width: 88%; font-size: 1.6rem; }
+  text-decoration: none;
+  border-radius: 0;
+  font-weight: 600;
 }
 
-/* ensure anchor targets are visible beneath fixed header */
+/* ====== SECTIONS ====== */
 section, [id] {
   scroll-margin-top: 120px;
 }
 
 section {
   max-width: 100%;
-  margin: 0rem auto;
-  padding: 2.50rem;
-  background: none; /* Remove white background */
-  border-radius: 0px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  background: none;
+  border-radius: 0;
   box-shadow: none;
 }
 
 section ul {
   list-style: none;
-  padding-left: 2.50rem;
+  padding-left: 2.5rem;
 }
 
 h1, h2 {
   font-weight: 600;
 }
 
+/* ====== FOOTER ====== */
 footer {
   text-align: center;
   padding: 2rem 1rem;
   color: #555;
   font-size: 0.95rem;
-  background: #f7f7f7;
+  background: #f9f9f9;
   border-top: 1px solid #ddd;
 }
 
+/* ====== BUTTONS ====== */
 .btn {
   display: inline-block;
   padding: 0.5em 1.2em;
@@ -197,6 +199,7 @@ footer {
   margin-top: 1em;
 }
 
+/* ====== MISC ====== */
 .muted {
   color: #888;
 }
@@ -208,6 +211,7 @@ img {
   margin: 0 auto;
 }
 
+/* ====== GALLERY GRID ====== */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -220,13 +224,13 @@ img {
   width: 100%;
   height: 220px;
   object-fit: cover;
-  border-radius: 0px;
+  border-radius: 0;
   box-shadow: 0 0px 0px rgba(0,0,0,0.07);
 }
 
-/* disable vertical scrolling when the html element has .no-scroll (applies only to pages that set the class) */
+/* ====== SCROLL LOCK ====== */
 html.no-scroll,
 body.no-scroll {
-  overflow-y: hidden;
+  overflow: hidden;
   height: 100vh;
 }
