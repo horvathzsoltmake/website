@@ -128,10 +128,6 @@ nav a:hover {
   line-height: 1;
   /* transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease; */
 }
-.hero-links a:hover,
-.hero-links a:focus {
-  background: rgba(255,255,255,0.12);
-}
 
 /* hero text overlay (used on about/contact) */
 .hero-text {
