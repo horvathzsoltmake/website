@@ -13,6 +13,13 @@ body {
   color: #222;
 }
 
+/* make sizing predictable */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 /* ==== FIXÁLT HEADER ==== */
 header {
   position: fixed;
@@ -47,9 +54,10 @@ nav a:hover {
 }
 
 .hero {
-  width: 100vw;
+  width: 100%;
   min-height: 60vh;
-  /* base hero background removed from here; use modifiers below */
+  padding: 0;               /* remove any internal page padding that could shift layout */
+  margin: 0;                /* ensure no horizontal offset */
   background-size: cover;
   background-position: center;
   display: flex;
@@ -101,8 +109,9 @@ nav a:hover {
   justify-content: center;
   text-align: center;
   width: 100%;
-  max-width: 760px;
+  max-width: 1200px;    /* wider container so centering looks visually centered on large screens */
   padding: 0 1rem;
+  margin: 0 auto;       /* explicit centering */
   height: 100%;                /* fill hero height so centering works */
 }
 .hero-links a {
@@ -129,13 +138,14 @@ nav a:hover {
 
 /* hero text overlay (used on about/contact) */
 .hero-text {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
   position: relative;
   z-index: 1;
   text-align: center;
   color: #fff;
   padding: 0 1rem;
-  max-width: 1000px;
-  margin: 0 auto;
 }
 .hero-text h1 { margin: 0; font-size: 2rem; line-height: 1; font-weight: 700; color: #fff; letter-spacing: -0.02em; }
 .hero-text p { margin: 0.6rem 0 0; font-size: 1.25rem; color: rgba(255,255,255,0.95); max-width: 44rem; margin-left: auto; margin-right: auto; }
