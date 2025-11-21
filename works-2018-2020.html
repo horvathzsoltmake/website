@@ -44,6 +44,43 @@
   <footer>
     &copy; 2025 Zsolt Horvath  <a href="https://www.instagram.com/zsolt.horvath.metalworks" target="_blank" rel="noopener noreferrer">@zsolt.horvath.metalworks</a>
   </footer>
+
+  <script>
+  (function(){
+    let overlay = null;
+    let showTimer = null;
+    function createOverlay(src){
+      const o = document.createElement('div');
+      o.className = 'lightbox-overlay';
+      o.innerHTML = '<img src="'+src.replace(/"/g,'')+'" alt="">';
+      o.style.pointerEvents = 'none';
+      document.body.appendChild(o);
+      requestAnimationFrame(()=> o.classList.add('show'));
+      return o;
+    }
+    document.querySelectorAll('.frame').forEach(frame=>{
+      frame.addEventListener('pointerenter', ()=>{
+        showTimer = setTimeout(()=>{
+          const img = frame.querySelector('img');
+          if(!img) return;
+          overlay = createOverlay(img.src);
+        }, 120);
+      });
+      frame.addEventListener('pointerleave', ()=>{
+        clearTimeout(showTimer);
+        if(overlay){
+          overlay.classList.remove('show');
+          setTimeout(()=> { if(overlay) { overlay.remove(); overlay = null; } }, 220);
+        }
+      });
+    });
+    document.addEventListener('keydown', e=>{
+      if(e.key === 'Escape' && overlay){
+        overlay.classList.remove('show');
+        setTimeout(()=> { if(overlay) { overlay.remove(); overlay = null; } }, 220);
+      }
+    });
+  })();
+  </script>
 </body>
-</html>
 </html>

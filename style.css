@@ -223,20 +223,20 @@ img {
   margin: 0 auto;
 }
 
-/* replace previous gallery-grid rules with wide horizontal frames */
+/* ensure gallery is aligned with hero content area */
 .gallery-grid {
   display: grid;
   grid-template-columns: 1fr; /* single column list of wide frames */
   gap: 1.25rem;
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1200px; /* same max-width as .hero-content */
   padding: 0 1rem;
 }
 
 /* frame: the visible rectangular area that masks the image */
 .frame {
   width: 100%;
-  height: 360px;         /* wide horizontal rectangle */
+  height: 360px;
   overflow: hidden;
   border-radius: 0px;
   background: #ffffff;
@@ -257,7 +257,7 @@ img {
   will-change: transform;
 }
 
-/* on hover the image moves up (jumps up) to reveal a different part */
+/* on hover the image moves up inside the frame */
 .frame:hover img,
 .frame:focus-within img {
   transform: translate(-50%, -12%) scale(1.03);
@@ -265,10 +265,41 @@ img {
 
 /* responsive frame heights */
 @media (max-width: 900px) {
-  .frame { height: 100px; }
+  .frame { height: 300px; }
 }
 @media (max-width: 520px) {
   .frame { height: 200px; }
+}
+
+/* Fullscreen hover lightbox (used by JS) */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.9);
+  z-index: 3000;
+  opacity: 0;
+  transition: opacity 220ms ease;
+  pointer-events: none; /* allow pointer to pass through so frame doesn't immediately lose hover */
+}
+
+.lightbox-overlay.show {
+  opacity: 1;
+}
+
+.lightbox-overlay img {
+  max-width: 100vw;
+  max-height: 100vh;
+  object-fit: contain;
+  transform: scale(1);
+  transition: transform 300ms ease;
+  will-change: transform;
+}
+
+.lightbox-overlay.show img {
+  transform: scale(1.02);
 }
 
 /* disable vertical scrolling when the html element has .no-scroll (applies only to pages that set the class) */
