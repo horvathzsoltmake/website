@@ -223,20 +223,53 @@ img {
   margin: 0 auto;
 }
 
+/* replace previous gallery-grid rules with wide horizontal frames */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
+  grid-template-columns: 1fr; /* single column list of wide frames */
+  gap: 1.25rem;
   margin: 0 auto;
   max-width: 1200px;
+  padding: 0 1rem;
 }
 
-.gallery-grid img {
+/* frame: the visible rectangular area that masks the image */
+.frame {
   width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 0px;
-  box-shadow: 0 0px 0px rgba(0,0,0,0.07);
+  height: 360px;         /* wide horizontal rectangle */
+  overflow: hidden;
+  border-radius: 4px;
+  background: #111;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+/* image sits absolutely inside the frame and is larger than the frame so it can be moved */
+.frame img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, 20%) scale(1.05); /* start slightly lower */
+  transition: transform 600ms cubic-bezier(.2,.9,.2,1);
+  will-change: transform;
+}
+
+/* on hover the image moves up (jumps up) to reveal a different part */
+.frame:hover img,
+.frame:focus-within img {
+  transform: translate(-50%, -12%) scale(1.03);
+}
+
+/* responsive frame heights */
+@media (max-width: 900px) {
+  .frame { height: 300px; }
+}
+@media (max-width: 520px) {
+  .frame { height: 200px; }
 }
 
 /* disable vertical scrolling when the html element has .no-scroll (applies only to pages that set the class) */
