@@ -245,3 +245,7 @@ body.no-scroll {
   overflow-y: hidden;
   height: 100vh;
 }
+
+html.works-page {
+  font-size: 80%;
+}
