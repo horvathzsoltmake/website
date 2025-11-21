@@ -227,7 +227,7 @@ img {
 .gallery-grid {
   display: grid;
   grid-template-columns: 1fr; /* single column list of wide frames */
-  gap: 1.25rem;
+  gap: 0.5rem;                /* reduced gap between frames */
   margin: 0 auto;
   max-width: 1200px; /* same max-width as .hero-content */
   padding: 0 1rem;
@@ -236,7 +236,7 @@ img {
 /* frame: the visible rectangular area that masks the image */
 .frame {
   width: 100%;
-  height: 360px;
+  height: 100px;        /* smaller horizontal rectangle */
   overflow: hidden;
   border-radius: 0px;
   background: #ffffff;
@@ -257,7 +257,7 @@ img {
   will-change: transform;
 }
 
-/* on hover the image moves up inside the frame */
+/* on hover the image moves up inside the frame (keeps subtle effect) */
 .frame:hover img,
 .frame:focus-within img {
   transform: translate(-50%, -12%) scale(1.03);
@@ -265,13 +265,13 @@ img {
 
 /* responsive frame heights */
 @media (max-width: 900px) {
-  .frame { height: 300px; }
+  .frame { height: 80px; }
 }
 @media (max-width: 520px) {
-  .frame { height: 200px; }
+  .frame { height: 60px; }
 }
 
-/* Fullscreen hover lightbox (used by JS) */
+/* Fullscreen clickable lightbox (used by JS) */
 .lightbox-overlay {
   position: fixed;
   inset: 0;
@@ -282,7 +282,8 @@ img {
   z-index: 3000;
   opacity: 0;
   transition: opacity 220ms ease;
-  pointer-events: none; /* allow pointer to pass through so frame doesn't immediately lose hover */
+  pointer-events: auto;   /* enable clicks to close */
+  cursor: zoom-out;
 }
 
 .lightbox-overlay.show {
