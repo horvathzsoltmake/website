@@ -107,23 +107,20 @@ nav a:hover {
   height: 100%;
 }
 
-/* hero variants for different pages */
 .hero--index {
-  /* moved hero image into images/index/ */
-  background-image: url('images/index/hero1.JPG');
+  background-image: url('images/hero1.JPG');
 }
 
 .hero--works {
-  /* hero for works page(s) lives in images/works/ or adjust as needed */
-  background-image: url('images/works/hero4.jpg');
+  background-image: url('images/hero4.jpg');
 }
 
 .hero--about {
-  background-image: url('images/about/hero3.JPG');
+  background-image: url('images/hero3.JPG');
 }
 
 .hero--contact {
-  background-image: url('images/contact/hero5.JPG');
+  background-image: url('images/hero5.JPG');
 }
 
 /* hero links (moved from inline styles in works.html) */
