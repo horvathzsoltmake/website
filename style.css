@@ -228,7 +228,7 @@ img {
 .gallery-grid {
   display: grid;
   grid-template-columns: 1fr; /* single column list of wide frames */
-  gap: 0.5rem;                /* reduced gap between frames */
+  gap: 0.25rem;                /* reduced gap between frames */
   margin: 0 auto;
   max-width: 1200px; /* same max-width as .hero-content */
   padding: 0 1rem;
@@ -246,22 +246,15 @@ img {
 
 /* image sits absolutely inside the frame and is larger than the frame so it can be moved */
 .frame img {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  transform: translate(-50%, 20%) scale(1.05); /* start slightly lower */
-  transition: transform 600ms cubic-bezier(.2,.9,.2,1);
-  will-change: transform;
-}
-
-/* on hover the image moves up inside the frame (keeps subtle effect) */
-.frame:hover img,
-.frame:focus-within img {
-  transform: translate(-50%, -12%) scale(1.03);
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  position: static;       /* remove absolute positioning */
+  transform: none !important;
+  transition: none !important;
+  will-change: auto;
 }
 
 /* responsive frame heights */
@@ -311,6 +304,7 @@ body.no-scroll {
   height: 100vh;
 }
 
+/* small page-specific font-size for works pages */
 html.works-page {
   font-size: 80%;
 }
