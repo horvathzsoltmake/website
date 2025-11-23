@@ -262,6 +262,15 @@ img {
   .frame { height: 60px; }
 }
 
+/* make frames half-height on the 2020–2024 page */
+.works-2020-2024 .frame { height: 50px; }
+@media (max-width: 900px) {
+  .works-2020-2024 .frame { height: 40px; }
+}
+@media (max-width: 520px) {
+  .works-2020-2024 .frame { height: 30px; }
+}
+
 /* Fullscreen clickable lightbox (used by JS) */
 .lightbox-overlay {
   position: fixed;
